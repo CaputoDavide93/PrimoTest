@@ -12,22 +12,38 @@ angular.module('primoTestApp')
   	var vm = this;
   	vm.users = [
   	{
-  		name: 'pippo',
+  		email: 'pippo',
   		password: 'poi'
   	},
   	{
-  		name: 'pluto',
+  		email: 'pluto',
   		password: 'pai'
   	},
   	{
-  		name: 'minni',
+  		email: 'minni@m',
   		password: 'pei'
   	},
   	{
-  		name: 'mickey',
+  		email: 'mickey',
   		password: 'pui'
   	}
-
   	];
-  });
 
+      this.entra = function (email, password) {
+     for(var i=0; i<= vm.users.length-1; i++){
+          if(email === vm.users[i].email){
+            window.alert("Benvenuto " + email);
+            break;
+          } 
+     } 
+      };
+ 
+
+        this.registra=function (email, password) {
+                this.users.push ( { email: email, password: password});
+                console.log("--- Registrato Nuovo Utente ---");
+                console.log("EMAIL:" + email);
+                console.log("PASSWORD:" + password);
+                console.log("----------------------------");
+        }
+})

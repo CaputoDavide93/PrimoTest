@@ -1,1 +1,46 @@
-<p>This is the login.ctrl view.</p>
+<form name="form.login">
+<table class="table table-responsive">
+	<thead>
+		<tr>
+			<th>
+				<label>Email : </label>
+			</th>
+			<th>
+				<label>Password : </label>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<input type="email" name="email" ng-model="user.email" required>
+<span ng-show="form.login.email.$dirty && form.login.email.$error.required"> CAMPO OBBLIGATORIO </span>
+<span ng-show="form.login.email.$dirty && form.login.email.$error.email"> CAMPO NON CORRETTO
+</span>
+			</td>
+			<td>
+				<input type="password" name="password" ng-model="user.password" required>
+<span ng-show="form.login.password.$dirty && form.login.password.$error.required"> CAMPO OBBLIGATORIO </span>
+<span ng-show="form.login.password.$dirty && form.login.password.$error.minleght"> CAMPO TROPPO CORTO </span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button class="btn btn-success" ng-click="loginctrl.entra(user.email,user.password)" ng-disabled="form.login.$invalid"> LOG IN </button>
+			</td>
+			<td>
+				<label>Utenti Registrati </label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+				<button class="btn btn-success" ng-click="loginctrl.registra(user.email,user.password)" ng-disabled="form.login.$invalid"> REGISTRA </button>
+			</td>
+			<td>
+				<li ng-repeat="prova in loginctrl.users">{{prova.email}} - {{prova.password}} </li>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</form>
