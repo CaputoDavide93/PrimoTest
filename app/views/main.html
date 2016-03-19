@@ -1,3 +1,8 @@
+<style type="text/css">
+.grigio{background-color: grey;}
+.giallo{background-color: yellow;}
+</style>
+
 <div class="jumbotron">
   <h1>'Allo, 'Allo!</h1>
   <p class="lead">
@@ -7,17 +12,28 @@
   <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<div class="row marketing" ng-repeat="aww in awesomeThings">
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+<!---<h4 ng-click="StampaPari($index)" ng-class="{ 'grigio':isEven($index), 'giallo':!isEven($index)}"> {{aww}} </h4>-->
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<!---<h4 ng-click="StampaPari($index)" ng-style="greyEven($index)">
+{{aww}}
+<button ng-style="greyEven($index)">INFO</button>
+ </h4> -->
+
+
+<!--<h4 ng-click="StampaPari($index)" ng-style="serveColor('testo')" ng-bind-template="{{aww}} info:   {{bottoneHtml}}">
+ </h4>-->
+
+ <!-- ng-show="isEven($index)" ng-style="serveColor('bottone')" -->
+ 
+
+<!--<h4 ng-click="StampaPari($index)" ng-style="serveColor('testo')">
+{{aww}}
+<button ng-class-even="greyClassEven($index)" ng-class-odd="greyClassEven($index)">INFO</button>
+ </h4> -->
+
+
+
 </div>
+

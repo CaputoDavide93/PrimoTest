@@ -1,0 +1,59 @@
+<form name="form.login">
+					<center><h1>_______________________________________</h1></center>
+
+<table class="table">
+<tbody align="center">
+    <tr>
+      <th>EMAIL</th>
+      <td>
+      		<input type="email" name="email" ng-model="user.email" required>
+      </td>
+      <td>
+			<span ng-show="form.login.email.$dirty && form.login.email.$error.required"> CAMPO OBBLIGATORIO </span>
+			<span ng-show="form.login.email.$dirty && form.login.email.$error.email"> CAMPO NON CORRETTO</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <th>PASSWORD</th>
+      <td>
+      	<input type="password" name="password" ng-model="user.password" required>
+      </td>
+      <td>
+		<span ng-show="form.login.password.$dirty && form.login.password.$error.required"> CAMPO OBBLIGATORIO </span>
+		<span ng-show="form.login.password.$dirty && form.login.password.$error.minleght"> CAMPO TROPPO CORTO </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+					<center><h1>_______________________________________</h1></center>
+
+<table class="table">
+<tbody>
+    <tr>
+      <th>UTENTI REGISTRATI</th>
+      <td> 
+		 <i><li ng-repeat="prova in loginctrl.users"> EMIAL: {{prova.email}} - PASS: {{prova.password}} </li></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+					<center><h1>_______________________________________</h1></center>
+
+<table class="table">
+<tbody align="center">
+    <tr>
+     <td>
+     	<button class="btn btn-success" ng-click="loginctrl.entra(user.email,user.password)" ng-disabled="form.login.$invalid"> ENTRA </button>
+     </td>
+      <td>
+		<button class="btn btn-success" ng-click="loginctrl.registra(user.email,user.password)" ng-disabled="form.login.$invalid"> REGISTRA </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+					<center><h1>_______________________________________</h1></center>
+
+
+</form>

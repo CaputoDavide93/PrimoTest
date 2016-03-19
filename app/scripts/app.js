@@ -27,6 +27,11 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'loginctrl'
       })
+      .when('/loginEmm', {
+        templateUrl: 'views/login.emm.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'loginctrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
